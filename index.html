@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="book-container">
+        <div class="book" id="book">
+            <!-- Spine -->
+            <div class="spine"></div>
+
+            <!-- Pages -->
+            <div class="page" id="cover-page">
+                <div class="front">
+                    <img src="images/cover.jpg" alt="Two Friends" class="bg-image">
+                    <h1 >Friendship_Request</h1>
+                    <button class="turn-btn" onclick="turnPage('cover-page', 'index-page')">Open</button>
+                </div>
+                <div class="back"></div>
+            </div>
+
+            <div class="page" id="index-page" style="display: none;">
+                <div class="front">
+                    <img src="images/flowers.jpg" alt="Pink Flowers" class="bg-image">
+                    <div class="login-form">
+                        <h2>Login</h2>
+                        <input type="text" id="username" placeholder="Username: user">
+                        <input type="password" id="password" placeholder="Password: secret">
+                        <button onclick="login()">Login</button>
+                    </div>
+                    <button class="turn-btn" onclick="turnPage('index-page', 'beach-page-1')">Next</button>
+                    <button class="prev-btn" onclick="turnPageBack('index-page', 'cover-page')">Previous</button>
+                </div>
+                <div class="back"></div>
+            </div>
+
+            <div class="page" id="beach-page-1" style="display: none;">
+                <div class="front">
+                    <img src="images/beach.jpg" alt="Beach" class="bg-image">
+                    <div class="left-section">
+                        <div class="liked-box">
+                            <h3>Liked Songs</h3>
+                            <a href="https://youtu.be/vJRr2-ODHhY?si=gU4sSUSAkiymyaUr" target="_blank">Song Link</a>
+                        </div>
+                        <div class="liked-box">
+                            <h3>Liked Movies</h3>
+                            <a href="https://youtu.be/IFyhgPKpApo?si=x2Ziy-1BJIZbKQos" target="_blank">Movie Link</a>
+                        </div>
+                        <div class="poll-box">
+                            <h3>Poll</h3>
+                            <label><input type="radio" name="poll" onclick="showInput('time-input')"> I need some time</label>
+                            <input type="text" id="time-input" placeholder="Enter time" style="display: none;">
+                            <br>
+                            <label><input type="radio" name="poll" onclick="showInput('date-input')"> I will talk to you on this day/date</label>
+                            <input type="text" id="date-input" placeholder="Enter day/date" style="display: none;">
+                            <br>
+                            <button onclick="submitPoll()">Submit</button>
+                        </div>
+                    </div>
+                    <button class="turn-btn" onclick="turnPage('beach-page-1', 'beach-page-2')">Next</button>
+                    <button class="prev-btn" onclick="turnPageBack('beach-page-1', 'index-page')">Previous</button>
+                </div>
+                <div class="back"></div>
+            </div>
+
+            <div class="page" id="beach-page-2" style="display: none;">
+                <div class="front">
+                    <img src="images/beach.jpg" alt="Beach" class="bg-image">
+                    <div class="login-form1">
+                        "There is only one life, harsh times may come and go but friendship stays forever, 
+                        we are not enemies by birth so let it go, let the past be past we can’t change it. 
+                        I am sorry for whatever I did in the past. Just give me one chance to prove me as a friend."
+                    </div>
+                    <button class="prev-btn" onclick="turnPageBack('beach-page-2', 'beach-page-1')">Previous</button>
+                </div>
+                <div class="back"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
